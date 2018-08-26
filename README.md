@@ -9,7 +9,10 @@ Este es el repositorio del curso. En el encontrarás todos los documentos y arch
  * [JS]
 	* Introducción
 		* ¿Qué es JS?
-		* Historia      
+		* Historia    
+	* Variables     
+	* Tipo de datos     
+	* Arreglos     
  * [Proyecto Final](https://github.com/jlcallalle/aprende-javascript)
 
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arreglos</title>
+</head>
+<body>
+	<script>
+		//Array, Arreglos, Vectores
+
+		//Personas 4, Contador 3
+		var amigos = ["Carlos", "Cesar", "Alex", "Manuel"];
+		var amigos2 = ["Luis", "Fernando", "Oscar"];
+		//amigos[0] = "Arturo"
+		//document.write(amigos[1]);
+		//amigos[amigos.length] = "Fernando";
+		//amigos[amigos.length] = "Luis";
+
+		//agregar elementos
+		//amigos.push("Luis, Fernando, oscar");
+
+		//pop: eliminar el ultimo elemento
+		//amigos.pop();
+
+		//document.write(amigos[0]);
+		//document.write(amigos[1]);
+		//document.write(amigos[2]);
+		//document.write(amigos[3]);
+
+		//Método concat(), se usa para unir 2 array
+		var amigos3 = amigos.concat(amigos2);
+		document.write(amigos3);
+		document.write('</br>');
+
+		//Join, agrega caracteres entre elementos
+		document.write(amigos.join(" , "));
+		document.write('</br>');
+
+		//Sort, muestra de forma ordenada
+		var ordenados = amigos.sort();
+		document.write(ordenados);
+
+		//length obtiene la cantidad de elementos del array
+		//document.write("Tienes "+ amigos.length + " Amigos");
+	</script>
+</body>
+</html>

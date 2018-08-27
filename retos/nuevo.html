@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nuevo</title>
+</head>
+<body>
+	
+	<script>
+		var cadena = prompt("Ingrese la frase");
+		var frase = cadena;
+		var arrayAll = [];
+		var arrayUnique = [];
+		var arrayFinal = [];
+		cadena = cadena.replace(/ /g, '');
+
+		//while ( ! cadena ) {
+			//cadena = prompt("Ingrese la frase");
+			//frase = cadena;
+			//cadena = cadena.replace(/ /g, '');
+		//}	
+
+		arrayAll = cadena.split('');		
+
+		arrayUnique = arrayAll.filter(function(item, i, array){ 
+			return array.indexOf(item) === i; 
+		});		
+
+		for (var i = 0; i < arrayUnique.length; i++) {
+			arrayFinal[arrayUnique[i]] = 0;
+			for (var j = 0; j < arrayAll.length; j++) {
+				if (arrayUnique[i]===arrayAll[j]) {
+					arrayFinal[arrayUnique[i]]+=1;
+				}
+			}
+		}
+
+		document.write('La frase es: '+frase+'<br>');
+		document.write('Contando caracteres:'+'<br>');
+		
+        for (var k in arrayFinal){
+		    if (arrayFinal.hasOwnProperty(k)) {
+		        document.write(k+'='+arrayFinal[k]+'<br>');
+		    }
+		}
+
+	</script>
+</body>
+</html>

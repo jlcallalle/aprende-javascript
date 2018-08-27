@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Orvis Ventures</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<!--
+	1. Crear una interfaz gráfica que permita :
+		a. Ingresar un conjunto indeterminado de números enteros en cualquier orden*
+	
+	2. Una vez ingresado el conjunto de números :
+		a. Generar el proceso de ordenamiento ascendente del conjunto.
+-->
+
+<main>
+  <div class="wrapper">
+    <div class="row">
+      <h3>Números desordenados</h3>
+      <p>para agregar input, hacer click en el boton 'Add Input'</p>
+      <button class="add">Add Input</button>
+      <div class="box-input"></div>
+    </div>
+    <div class="row">
+      <h3>Números ordenados</h3>
+      <button class="ordena">Show Data</button>
+      <ul class="datos-ordenados"></ul>
+    </div>
+  </div>
+</main>
+    <script src="js/recursos.js"></script>
+
+	<script>
+	var MyApp = {
+    	numero : {
+	        ordena : function() {
+
+	            $('.add').click(function(event) {
+	               event.preventDefault();
+	               $(".box-input").append("<input  type='text' onkeypress='validate(event)' >");
+	            });
+
+	            $('.ordena').click(function(event) {
+	                var inputs = $(".box-input input");
+	                var data1 = [];
+	                inputs.each(function( index ) {
+	                  data1.push(parseInt($( this ).val()));
+	                });
+	                console.log(data1);
+	                data2 = eliminarRepetidos(data1);
+	                data3 = ordenarAscendentemente(data2);
+	                console.log(data3);
+	                $(".datos-ordenados").html('');
+	                for (var i = 0; i < data3.length; i++) {
+	                  $(".datos-ordenados").append("<li>"+data3[i]+"</li>");
+	                }
+	            });
+
+	            //funcion que permite ordenar de forma ascendente
+	            function ordenarAscendentemente(datos){
+	                for(var i=1;i<datos.length;i++){
+	                    for(var j=0;j<(datos.length-i);j++){
+	                        if(datos[j]>datos[j+1]){
+	                            k=datos[j+1];
+	                            datos[j+1]=datos[j];
+	                            datos[j]=k;
+	                        }
+	                    }
+	                }
+	                return datos;
+	            }
+
+	            //funcion que permite eliminar números repetidos
+	            function eliminarRepetidos(datos){
+	                var elemento="",aux=[].concat(datos),nuevo_arreglo=Array();
+	                for (var i in aux){ //
+	                    elemento=aux[i];
+	                    for (var a in aux){
+	                        if (elemento==aux[a] && a!=i){
+	                            aux[a]="";
+	                        }
+	                    }
+	                }
+	                for (var a in aux){
+	                    if (aux[a]!=""){
+	                        nuevo_arreglo.push(aux[a]);
+	                    }
+	                }
+	                return nuevo_arreglo;
+	            }
+
+	 
+	        }
+	    }
+	}
+
+$(document).ready(function(){
+    MyApp.numero.ordena();
+})
+
+//funcion permite escribir solo números en inputs
+function validate(evt) {
+  var theEvent = evt || window.event;
+  var key = theEvent.keyCode || theEvent.which;
+  key = String.fromCharCode( key );
+  var regex = /[0-9]|\./;
+  if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}
+
+		
+		
+
+	</script>
+</body>
+</html>

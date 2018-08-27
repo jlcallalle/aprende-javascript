@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//Enunciado, ingresar la frase: Hola, como estas y mostrar los caracteres que se repiten
+		var cadena = 'Hola como estas';
+		var frase = cadena;
+		var arrayAll = [];
+		var arrayUnique = [];
+		var arrayFinal = [];
+		var cadenaClear = cadena.replace(/ /g, '');
+
+		arrayAll = cadenaClear.split('');
+
+		arrayUnique = arrayAll.filter(function(item, i, array){ 
+			return array.indexOf(item) === i; 
+		});	
+
+		//var cadena = prompt("Ingrese la frase");
+		document.write('La frase es: '+frase+'<br>');
+		document.write("Cantidad de letras :" +  cadena.length + '</br>');
+	
+		for( i = 0; i <= cadena.length; i++ ) {
+			var repite;
+			document.write(cadena.charAt(i)+ " = " + "<br>");
+		}
+
+		
+
+
+
+	</script>
+</body>
+</html>

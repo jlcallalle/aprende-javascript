@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Funciones</title>
+</head>
+<body>
+	<script>
+		//una funcion ejecuta una accion
+
+		//la funcion tiene parametos -> ()
+		function saludo(nombre){
+			document.write("Hola " + nombre);
+		}
+		saludo("Jorge");
+
+		document.write( " <br> " )
+
+		function suma(numero1, numero2){
+			var numero1 = numero1;
+			var numero2 = numero2;
+			//document.write(numero1 + numero2);
+			return numero1 + numero2;
+			//cuando se ejecuta return se corta la funcion
+		}
+
+		document.write( suma(40,50) );
+		document.write( " <br> " )
+		document.write( suma(20,33) );
+
+		function numeroMaximo(valor1, valor2){
+			if ( valor1 > valor2 ) {
+				return valor1;
+			} else {
+				return valor2;
+			}
+			
+		}
+
+		numeroMaximo(10,20);
+
+		/* link: https://www.youtube.com/watch?v=AvMFiQl7AU0 */
+		
+
+	</script>
+</body>
+</html>
+
